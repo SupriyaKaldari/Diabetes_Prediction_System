@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <title>Diabetes Predictor</title>
+        <html>
+<head> 
+<style>
+body{background-repeat:no-repeat;
+     background-size:1550px 850px;
+}
+button{vertical-align:middle;
+       height:30px;
+       width:100%;
+      background-color: rgba(0, 0, 0, 0.219);
+       text-decoration-color: #fff;
+      font-size: 20px;}
+       div.login{background:rgba(0, 0, 0, 0.041);
+        border-radius:25px;
+		border-style:solid;
+		padding-right: 2px;;
+		float:left;position: absolute;
+	top: 25%;
+	left: 40%;
+	margin: -150px 0 0 -150px;
+	width:500px;
+	height:600px;
+}
+
+.login h1 { color: #fff; text-shadow: 0 0 10px rgba(0,0,0,0.3); letter-spacing:1px; text-align:center; }
+
+input { 
+	width: 100%; 
+	margin-bottom: 15px; 
+	background: rgba(0,0,0,0.3);
+	border: none;
+	outline: none;
+	padding: 10px;
+	font-size: 13px;
+	color: rgba(255, 255, 255, 0.993);
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.849);
+	border: 1px solid rgba(0,0,0,0.3);
+	border-radius: 4px;
+	box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2);
+	right:20%
+}
+input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2); }
+		
+		
+</style>
+    </head>
+    <body background="https://www.utphysicians.com/wp-content/uploads/2020/08/doctor-taking-blood-sample.jpg">
+        <div class="login">
+           <h1 style="text-align:center;color:rgb(6, 10, 3);font-size:50px;">Diabetes Predictor</h1>
+       
+            
+           <form action="{{ url_for('predict')}}"method="post">
+             <input type="text" name="Pregnancies" placeholder="Pregnancies" required="required" /></br>
+
+               <input type="text" name="Glucose Level" placeholder="Glucose Level" required="required" /></br>
+               <input type="text" name="Blood Pressure" placeholder="Blood Pressure" required="required" /></br>
+               <input type="text" name="Skin Thickness" placeholder="Skin Thickness" required="required" /></br>
+               <input type="text" name="Insulin" placeholder="Insulin" required="required" /></br>
+               <input type="text" name="BMI" placeholder="BMI" required="required" /></br>
+               <input type="text" name="Diabetes Pedigree Function" placeholder="Diabetes Pedigree Function" required="required" /></br>
+               <input type="text" name="Age" placeholder="Age" required="required" /></br>
+               
+               
+       
+               <button type="submit" class="btn btn-primary btn-block btn-large"><b>Predict</b></button>
+           </form>
+       
+          <br>
+          <br>
+         <h2 style="text-align:center;font-size:36px;"> <b>{{ prediction_text }}</b></h2>
+       
+        </div>
+       
+       
+    <body>
+</html>

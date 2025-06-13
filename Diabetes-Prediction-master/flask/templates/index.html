@@ -1,0 +1,176 @@
+<html>
+    <head>
+        <title>Diabetes Predictor</title>
+        <html>
+<head>
+<title>Diabetes Predictor</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/20c5629a29.js" crossorigin="anonymous"></script> 
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+.food-munch-logo {
+  width: 80px;
+margin-top:15px;
+font-family:Monospace;
+}
+#navItem1 {
+  color: #323f4b;
+  font-family: "Roboto";
+}
+#navItem2 {
+  color: #323f4b;
+  font-family: "Roboto";
+}
+#navItem3 {
+  color: #323f4b;
+  font-family: "Roboto";
+}
+#navItem4 {
+  color: #323f4b;
+  font-family: "Roboto";
+}
+.banner-section-bg-container {
+margin-top:20px;
+  background-image: url("https://www.celgene.com/content/uploads/2014/10/World_Psoriasis_Day.jpg");
+  height: 100vh;
+  background-size: cover;
+}
+.banner-heading {
+  color: white;
+  font-family: "Roboto";
+  font-size: 45px;
+  font-weight: 300;
+margin-bottom:10px;
+}
+.banner-caption {
+  color: white;
+  font-family: "Roboto";
+  font-size: 40px;
+  font-weight: 300;
+}
+.custom-button {
+  color: white;
+  background-color: #1E90FF;
+  width: 110px;
+  height: 45px;
+  border-width: 0;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+
+
+button{
+      
+       height:40px;
+       width:200px;
+       background-color: #536878;
+       text-decoration-color: #fff;
+       font-size: 20px;
+        border-radius: 10px;
+border-width : 0;
+color:white;
+}
+       div.login{
+	background:rgba(0, 0, 0, 0.041);
+        border-radius:25px;
+	border-style:solid;
+	padding-right: 2px;;
+	float:left;
+	margin:20px;
+	margin-left:300px;
+	left: 40%;
+	width:500px;
+	height:600px;
+}
+
+.login h1 { color: #fff; 
+letter-spacing:1px; 
+text-align:center;
+font-family:"Garamond";
+ }
+
+input { 
+	width: 70%; 
+	margin-bottom: 15px; 
+	background: rgba(0,0,0,0.3);
+	border: none;
+	outline: none;
+	padding: 10px;
+	font-size: 13px;
+	color:white;
+	border: 1px solid rgba(0,0,0,0.3);
+	border-radius: 4px;
+	box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2);
+margin-left:70px;
+}
+input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2); }
+
+</style>
+    </head>
+    <body>
+<div>
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <div class="container" id="wcuSection">
+        <a class="navbar-brand" href="#">
+          <h4 class="food-munch-logo">DIABETES PREDICTION</h4>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ml-auto">
+            <a class="nav-link active" id="navItem1" href="{{ url_for('home') }}">
+              HOME
+              <span class="sr-only">(current)</span>
+            </a>
+            <a class="nav-link" href="#exploreMenuSection" id="navItem3">PREDICTION</a>
+            <a class="nav-link" href="{{ url_for('home') }}" id="navItem4">PERFORMANCE</a>
+
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="banner-section-bg-container d-flex justify-content-center flex-column">
+      <div class="text-center">
+        <h1 class="banner-heading mb-1">Primary Stage of Diabetes Prediction</h1>
+        <p class="banner-caption mb-2">using Machine Learning Approaches</p>
+      </div>
+    </div>
+</div>
+
+
+<div class="container" id="exploreMenuSection">
+        <div class="login">
+           <h1 style="text-align:center;color:rgb(6, 10, 3);font-size:45px;">Diabetes Predictor</h1>
+       
+            
+           <form action="{{ url_for('predict')}}"method="post">
+             <input type="text" name="Pregnancies" placeholder="Pregnancies" required="required" /></br>
+
+               <input type="text" name="Glucose Level" placeholder="Glucose Level" required="required" /></br>
+               <input type="text" name="Blood Pressure" placeholder="Blood Pressure" required="required" /></br>
+               <input type="text" name="Skin Thickness" placeholder="Skin Thickness" required="required" /></br>
+               <input type="text" name="Insulin" placeholder="Insulin" required="required" /></br>
+               <input type="text" name="BMI" placeholder="BMI" required="required" /></br>
+               <input type="text" name="Diabetes Pedigree Function" placeholder="Diabetes Pedigree Function" required="required" /></br>
+               <input type="text" name="Age" placeholder="Age" required="required" /></br>
+               
+               <div class="text-center">
+       
+               <button type="submit"><b>Predict</b></button></div>
+           </form>
+       
+          <br>
+          <br>
+         <h2 style="text-align:center;font-size:25px;"> <b>{{ prediction_text }}</b></h2>
+       
+        </div>
+       
+ </div>
+
+
+    <body>
+</html>

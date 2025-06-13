@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<title>Diabetes Predictor</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/20c5629a29.js" crossorigin="anonymous"></script>
+<style>
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.food-munch-logo {
+  width:120px;
+margin-top:15px;
+font-family:Monospace;
+}
+#navItem1 {
+  color: #323f4b;
+  font-family: "Roboto";
+}
+#navItem2 {
+  color: #323f4b;
+  font-family: "Roboto";
+}
+#navItem3 {
+  color: #323f4b;
+  font-family: "Roboto";
+}
+#navItem4 {
+  color: #323f4b;
+  font-family: "Roboto";
+}
+#navItem5 {
+  color: #323f4b;
+  font-family: "Roboto";
+}
+.banner-section-bg-container {
+margin-top:20px;
+  background-image: url("https://www.celgene.com/content/uploads/2014/10/World_Psoriasis_Day.jpg");
+  height: 100vh;
+  background-size: cover;
+}
+.banner-heading {
+  color: white;
+  font-family: "Roboto";
+  font-size: 45px;
+  font-weight: 300;
+margin-bottom:10px;
+}
+.banner-caption {
+  color: white;
+  font-family: "Roboto";
+  font-size: 40px;
+  font-weight: 300;
+}
+.custom-button {
+  color: white;
+  background-color: #1E90FF;
+  width: 130px;
+  height: 45px;
+  border-width: 0;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+.custom-outline-button {
+  color: #d0b200;
+  background-color: transparent;
+  width: 130px;
+  height: 45px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #d0b200;
+  border-radius: 8px;
+}
+.wcu-section {
+  background-color: #f9fbfe;
+}
+.wcu-section-heading {
+  color: #183b56;
+  font-family: "Roboto";
+  font-size: 28px;
+  font-weight: 700;
+}
+.wcu-section-description {
+  color: #5a7184;
+  font-family: "Roboto";
+  font-size: 16px;
+}
+.wcu-card {
+  text-align: center;
+  background-color: white;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #e5eaf4;
+  border-radius: 16px;
+}
+.wcu-card-image {
+  width: 125px;
+  height: 90px;
+}
+.wcu-card-title {
+  color: #323f4b;
+  font-family: "Roboto";
+  font-size: 22px;
+  font-weight: 500;
+}
+.wcu-card-description {
+  color: #7b8794;
+  font-family: "Roboto";
+  font-size: 16px;
+}
+.offers {
+  color: #323f4b;
+  font-style: italic;
+  font-weight: 600;
+}
+.explore-menu-section {
+  background-color: white;
+}
+.menu-section-heading {
+  color: #183b56;
+  font-family: "Roboto";
+  font-size: 28px;
+  font-weight: 700;
+}
+.menu-item-image {
+  border-radius: 16px;
+}
+.menu-card-title {
+  color: #323f4b;
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 24px;
+}
+.menu-item-link {
+  color: black;
+  font-family: "Roboto";
+  font-size: 15px;
+  font-weight:500;
+}
+.menu-item-card {
+  border-radius: 16px;
+}
+.healthy-food-section {
+  background-color: #f9fbfe;
+}
+.healthy-food-section-img {
+  width: 270px;
+}
+.healthy-food-section-heading {
+  color: #183b56;
+  font-family: "Roboto";
+  font-size: 28px;
+  font-weight: 700;
+}
+.healthy-food-section-description {
+  color: #5a7184;
+  font-family: "Roboto";
+  font-size: 16px;
+}
+.delivery-and-payment-section {
+  background-color: white;
+}
+.delivery-and-payment-section-img {
+  width: 400px;
+}
+.delivery-and-payment-section-heading {
+  color: #183b56;
+  font-family: "Roboto";
+  font-size: 28px;
+  font-weight: 700;
+}
+.delivery-and-payment-section-description {
+  color: #5a7184;
+  font-family: "Roboto";
+  font-size: 16px;
+}
+.payment-card-img {
+  width: 115px;
+  height:90px;
+  margin-right: 28px;
+}
+.thanking-customers-section {
+  background-color: #d0b2001a;
+}
+.thanking-customers-section-heading {
+  color: #183b56;
+  font-family: "Roboto";
+  font-size: 28px;
+  font-weight: 700;
+}
+.thanking-customers-section-description {
+  color: #5a7184;
+  font-family: "Roboto";
+  font-size: 16px;
+}
+.thanking-customers-section-img {
+  width: 400px;
+  margin-bottom: 20px;
+}
+.follow-us-section {
+  background-color: white;
+}
+.follow-us-section-heading {
+  text-align: center;
+  color: #183b56;
+  font-family: "Roboto";
+  font-size: 28px;
+  font-weight: 700;
+}
+.follow-us-icon-container {
+  background-color: #faf7e8;
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+  margin: 15px;
+  padding-top: 22px;
+  padding-bottom: 14px;
+  padding-right: 16px;
+  padding-left: 22px;
+}
+.icon {
+  color: #00703c;
+  font-size: 35px;
+}
+.footer-section {
+  background-color: #0d2436;
+}
+.footer-section-mail-id {
+  color: #959ead;
+  font-family: "Roboto";
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 10px;
+}
+.footer-section-address {
+  color: #959ead;
+  font-family: "Roboto";
+  font-size: 14px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+margin-left:500px;
+margin-top:25px;
+}
+</style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <h4 class="food-munch-logo">DIABETES PREDICTION</h4>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ml-auto">
+            <a class="nav-link active" id="navItem1" href="#wcuSection">
+              HOME
+              <span class="sr-only">(current)</span>
+            </a>
+            <a class="nav-link" href="#exploreMenuSection" id="navItem2">CATEGORIES</a>
+            <a class="nav-link" href="#deliveryPaymentSection" id="navItem3">PREDICTION</a>
+            <a class="nav-link" href="#followUsSection" id="navItem4">DIET</a>
+	    <a class="nav-link" href="#deliveryPaymentSections" id="navItem5">MEDICATION</a>
+	    <a class="nav-link" href="performance.html" id="navItem5">PERFORMANCE</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="banner-section-bg-container d-flex justify-content-center flex-column">
+      <div class="text-center">
+        <h1 class="banner-heading mb-1">Primary Stage of Diabetes Prediction</h1>
+        <p class="banner-caption mb-2">using Machine Learning Approaches</p>
+      </div>
+    </div>
+    <div class="wcu-section pt-5 pb-5" id="exploreMenuSection">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h1 class="wcu-section-heading">Diabetes Categorizes</h1>
+            <p class="wcu-section-description">
+              Diabetes are named Insulin-Dependent and Non-Insulin-Dependent Diabetes.
+            </p>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="wcu-card p-3 mb-3">
+              <img
+                src="https://media.istockphoto.com/photos/type-1-diabetes-concept-suggested-by-insulin-syringe-picture-id650343892?k=20&m=650343892&s=612x612&w=0&h=ouVlHxDg5xmoaT8KWFqWFCM5pDuyhRkUA5gXsm5wjBo="
+                class="wcu-card-image"
+              />
+              <h1 class="wcu-card-title mt-3">TYPE 1</h1>
+              <p class="wcu-card-description">
+                Type 1 diabetes, once known as juvenile diabetes or insulin-dependent diabetes,is a chronic condition in which the pancreas produces little or no insulin.Insulin is a hormone needed to allow sugar (glucose) to enter cells to produce energy.Range from 99mg/dl or below.
+              </p>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="wcu-card p-3 mb-3">
+              <img
+                src="https://image.shutterstock.com/image-photo/type-2-diabetes-treatment-prevention-260nw-459053200.jpg"
+                class="wcu-card-image"
+              />
+              <h1 class="wcu-card-title mt-3">TYPE 2</h1>
+              <p class="wcu-card-description">
+                Type 2 diabetes used to be known as adult-onset diabetes, Your pancreas does not produce enough insulin — a hormone that regulates the movement of sugar into your cells - and cells respond poorly to insulin and take in less sugar.Range from 100-125mg/dl.
+              </p>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="wcu-card p-3 mb-3">
+              <img
+                src="https://pagebuilder.mydiabetes.diet/app/uploads/2021/06/IMi9VBXFi6LcttA4vU93CS1dKyWH8cmUtRsnHmF1-1.png"
+                class="wcu-card-image"
+              />
+              <h1 class="wcu-card-title mt-3">GESTATIONAL DIABETES</h1>
+              <p class="wcu-card-description">
+                Gestational diabetes (GDM) is DM that occurs during a pregnancy, and the blood sugar level is too high during this time.The classification of type 3 diabetes is highly controversial, and it’s not widely accepted by the medical community as a clinical diagnosis.Range from 126mg/dl or above.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<div class="thanking-customers-section pt-5 pb-5" id="deliveryPaymentSection">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-7 d-flex flex-column justify-content-center">
+            <h1 class="thanking-customers-section-heading">
+              Diabetic Prediction Test
+            </h1>
+            <p class="thanking-customers-section-description">
+              Check You Have Diabetics or Not.
+            </p>
+            <div class="d-md-none">
+              <img
+                src="https://thumbs.dreamstime.com/b/diabetes-check-up-10675775.jpg"
+                class="thanking-customers-section-img"
+              />
+            </div>
+            <div>
+              <a href="http://127.0.0.1:5000/" class="menu-item-link">
+                <button class="custom-button">Click to Test</button>
+              </a>
+            </div>
+          </div>
+          <div class="col-12 col-md-5 d-none d-md-block">
+            <img
+              src="https://thumbs.dreamstime.com/b/diabetes-check-up-10675775.jpg"
+              class="thanking-customers-section-img"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="healthy-food-section pt-5 pb-5" id="followUsSection">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-5">
+            <div class="text-center">
+              <img
+                src="https://www.fashioncentral.pk/wp-content/uploads/2017/02/Living_Lifestyle/ramadan_diet_plan-300x300.jpg"
+                class="healthy-food-section-img"
+              />
+            </div>
+          </div>
+          <div class="col-12 col-md-7">
+            <h1 class="healthy-food-section-heading">
+              Diabetes Precautions Diet
+            </h1>
+            <p class="healthy-food-section-description">
+              In general, your diet should include protein plus the right mix of carbohydrates and fats.
+	      Too many carbohydrates can lead to spikes in your blood sugar.A dietitian can help you plan 
+	      your meals and come up with an eating plan that will keep you and baby healthy with foods you actually like.
+            </p>
+	    <a href="https://youtu.be/p7MBwa1h32o">
+            <button class="custom-button">Watch Video</button>
+	    </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="delivery-and-payment-section pt-5 pb-5" id="deliveryPaymentSection">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-5 order-1 order-md-2">
+            <div class="text-center">
+              <img
+                src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https:%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F44%2F2018%2F09%2F27212407%2Fcombination20pill.jpeg&q=85"
+                class="delivery-and-payment-section-img"
+              />
+            </div>
+          </div>
+          <div class="col-12 col-md-7 order-2 order-md-1" id="deliveryPaymentSections">
+            <h1 class="delivery-and-payment-section-heading">
+              Diabetes Medications
+            </h1>
+            <p class="delivery-and-payment-section-description">
+              Pramlintide (SymlinPen 120, SymlinPen 60) is an amylinomimetic drug. 
+	      It’s an injectable drug used before meals.It works by delaying the 
+	      time your stomach takes to empty itself.
+              It reduces glucagon secretion after meals. This lowers your blood sugar.
+	      It also reduces appetite through a central mechanism.
+            </p>
+	    <a href="https://www.amazon.in/s?k=diabetics+medicine&rh=n%3A18049712031&ref=nb_sb_noss">
+            <button class="custom-button">Order Now</button>
+	    </a>
+            <div class="mt-3">
+              <img
+                src="https://th.bing.com/th/id/R.42a7861bb1a403af534b18986ab4e198?rik=tERIJIuEOHXLaw&riu=http%3a%2f%2flofrev.net%2fwp-content%2fphotos%2f2017%2f03%2famazon_logo_1.png&ehk=4ctuhLarHphu6crgqSRu2SyaKFJN628s92q90IuTnMY%3d&risl=&pid=ImgRaw&r=0"
+                class="payment-card-img"
+              />
+              <img
+                src="https://tse2.mm.bing.net/th/id/OIP.XlJsyXDVurprXwUs716DQAHaHa?pid=ImgDet&rs=1"
+                class="payment-card-img"
+              />
+              <img
+                src="https://www.payuoc.com/wp-content/uploads/2020/02/PharmEasy-Logo-702x526.jpg"
+                class="payment-card-img"
+              />
+              <img
+                src="https://tse1.mm.bing.net/th/id/OIP.Omtw8Leab5WtRaeZPjt_ewAAAA?pid=ImgDet&rs=1"
+                class="payment-card-img"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   <div class="follow-us-section pt-5 pb-5" id="followUsSection">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h1 class="follow-us-section-heading">Follow Us</h1>
+          </div>
+          <div class="col-12">
+            <div class="d-flex flex-row justify-content-center">
+              <div class="follow-us-icon-container">
+		<a href="https://twitter.com/Practo">
+                <i class="fab fa-twitter icon"></i>
+		</a>
+              </div>
+              <div class="follow-us-icon-container">
+		<a href="https://www.instagram.com/practo/">
+                <i class="fab fa-instagram icon"></i>
+		</a>
+              </div>
+              <div class="follow-us-icon-container">
+		<a href="https://www.facebook.com/practo"
+                <i class="fab fa-facebook icon"></i>
+		</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-section pt-5 pb-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <img
+              src="https://www.htcinc.net/wp-content/uploads/2020/06/insurance-icon.png"
+              class="food-munch-logo"
+            />
+            <h1 class="footer-section-mail-id">Niheeth@practo.com</h1>
+            <p class="footer-section-address">
+              123 Ayur Vigyan Nagar, New Delhi, India.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

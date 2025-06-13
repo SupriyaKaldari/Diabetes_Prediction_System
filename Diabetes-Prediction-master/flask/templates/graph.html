@@ -1,0 +1,142 @@
+<html>
+    <head>
+        <title>Diabetes Predictor</title>
+        <html>
+<head>
+<title>Diabetes Predictor</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/20c5629a29.js" crossorigin="anonymous"></script> 
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+.food-munch-logo {
+  width: 80px;
+margin-top:15px;
+font-family:Monospace;
+}
+#navItem1 {
+  color: #323f4b;
+  font-family: "Roboto";
+}
+#navItem2 {
+  color: #323f4b;
+  font-family: "Roboto";
+}
+#navItem3 {
+  color: #323f4b;
+  font-family: "Roboto";
+}
+#navItem4 {
+  color: #323f4b;
+  font-family: "Roboto";
+}
+.banner-section-bg-container {
+margin-top:20px;
+  background-image: url("https://www.celgene.com/content/uploads/2014/10/World_Psoriasis_Day.jpg");
+  height: 100vh;
+  background-size: cover;
+}
+.banner-heading {
+  color: white;
+  font-family: "Roboto";
+  font-size: 45px;
+  font-weight: 300;
+margin-bottom:10px;
+}
+.banner-caption {
+  color: white;
+  font-family: "Roboto";
+  font-size: 40px;
+  font-weight: 300;
+}
+.custom-button {
+  color: white;
+  background-color: #1E90FF;
+  width: 130px;
+  height: 45px;
+  border-width: 0;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+.thanking-customers-section {
+  background-color: #d0b2001a;
+}
+.thanking-customers-section-heading {
+  color: #183b56;
+  font-family: "Roboto";
+  font-size: 28px;
+  font-weight: 700;
+}
+.thanking-customers-section-description {
+  color: #5a7184;
+  font-family: "Roboto";
+  font-size: 16px;
+}
+.thanking-customers-section-img {
+  width: 400px;
+  margin-bottom: 20px;
+}			
+</style>
+    </head>
+    <body>
+<div>
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <div class="container" id="wcuSection">
+        <a class="navbar-brand" href="#">
+          <h4 class="food-munch-logo">DIABETES PREDICTION</h4>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ml-auto">
+            <a class="nav-link active" id="navItem1" href="homepage.html">
+              HOME
+              <span class="sr-only">(current)</span>
+            </a>
+            <a class="nav-link" href="homepage.html" id="navItem2">UPLOAD</a>
+            <a class="nav-link" href="http://127.0.0.1:5000/" id="navItem3">PREDICTION</a>
+            <a class="nav-link" href="performance.html" id="navItem4">PERFORMANCE</a>
+	    <a class="nav-link" href="#deliveryPaymentSection" id="navItem4">GRAPH</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="banner-section-bg-container d-flex justify-content-center flex-column">
+      <div class="text-center">
+        <h1 class="banner-heading mb-1">Primary Stage of Diabetes Prediction</h1>
+        <p class="banner-caption mb-2">using Machine Learning Approaches</p>
+      </div>
+    </div>
+</div>
+<div class="thanking-customers-section pt-5 pb-5 mt-5" id="deliveryPaymentSection">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-12 col-md-7 d-flex flex-column justify-content-center">
+            <h1 class="thanking-customers-section-heading">
+              DIABETES PREDICTION CHART
+            </h1>
+            <p class="thanking-customers-section-description">
+              Representing Static Graph of the dataset.
+            </p>
+            <div class="d-md-none">
+              <img
+                src="graph.jpg"
+                class="thanking-customers-section-img"
+              />
+            </div>
+ </div>
+          <div class="col-12 col-md-5 d-none d-md-block">
+            <img
+              src="graph.jpg"
+              class="thanking-customers-section-img"
+            />
+          </div>
+          </div>
+      </div>
+    </div>
+
+    <body>
+</html>
